@@ -1,0 +1,177 @@
+* {
+    margin: 0;
+    padding: 0;
+    --white: #DDDBD7;
+    --green: #53583E;
+    --beige: #AEA38E;
+    --brown: #AC9279;
+}
+
+@font-face {
+    font-family: font-regular;
+    src: url(./fonts/Fontspring-DEMO-theseasons-reg.otf);
+}
+
+@font-face {
+    font-family: font-italic;
+    src: url(./fonts/Fontspring-DEMO-theseasons-it.otf);
+}
+
+@font-face {
+    font-family: font-bold;
+    src: url(./fonts/Fontspring-DEMO-theseasons-bd.otf);
+}
+
+@font-face {
+    font-family: font-bold-italid;
+    src: url(./fonts/Fontspring-DEMO-theseasons-bdit.otf);
+}
+
+body {
+    background-color: var(--beige);
+    max-width: 70%;
+    margin: auto;
+}
+
+.catalogName {
+    display: flex;
+    height: 10rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.catalogName h1 {
+    color: var(--white);
+    font-family: font-bold;
+    font-size: 3rem;
+    z-index: 2;
+}
+
+.heroSection nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    height: 100%;
+    padding-top: 2rem;
+}
+
+.heroSection ul li a{
+    font-family: font-regular;
+    text-decoration: none;
+    color: var(--white);
+    margin: 0 3rem;
+}
+
+.heroSection {
+    background-image: url(./images/Background.png);
+    height: 40vh;
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+}
+
+.layer {
+    content: '';
+    height: 40vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: -99;
+}
+
+.slogan h1 {
+    color: var(--white);
+    font-family: font-bold;
+    font-size: 3rem;
+    z-index: 2;
+    text-align: center;
+    padding-top: 10vh;
+}
+
+.catalog {
+    background-color: var(--white);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
+
+.item-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #fff;
+}
+.item-description, .item-price {
+    padding: 10px;
+    text-align: center;
+}
+.item-description {
+    font-weight: bold;
+}
+.item-price {
+    color: #555;
+}
+
+/* Image Reel Styles */
+.image-reel {
+    position: relative;
+    overflow: hidden;
+}
+.image-container {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+.image-container img {
+    max-width: 100%;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Navigation Controls */
+.nav-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+.prev-btn {
+    left: 10px;
+    opacity: 0;
+}
+.next-btn {
+    right: 10px;
+    opacity: 0;
+}
+
+/* Default state - buttons hidden */
+.prev-btn, .next-btn {
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+}
+
+/* Buttons become visible when hovering over the entire card */
+.item-card:hover .prev-btn,
+.item-card:hover .next-btn {
+    opacity: 1;
+}
+
+/* Hover effect for buttons (optional) */
+.prev-btn:hover,
+.next-btn:hover {
+    opacity: 1;
+    transition: all 0.4s ease-in-out;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .catalog {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 480px) {
+    .catalog {
+        grid-template-columns: 1fr;
+    }
+}
