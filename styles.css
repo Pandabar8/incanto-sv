@@ -188,8 +188,3 @@ h2 {
         font-size: 2rem;
     }
 }
-@media (max-width: 480px) {
-    .catalog {
-        grid-template-columns: 1fr;
-    }
-}
