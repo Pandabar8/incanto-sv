@@ -33,6 +33,15 @@ body {
     margin: auto;
 }
 
+h2 {
+    font-family: font-regular;
+    color: var(--green);
+    justify-content: center;
+    text-decoration: underline;
+    margin: auto;
+    grid-column: 1 / -1;
+}
+
 .catalogName {
     display: flex;
     margin: auto;
@@ -173,6 +182,10 @@ body {
 
     .heroSection ul li a{
         margin: 0 1rem;
+    }
+
+    .slogan h1 {
+        font-size: 2rem;
     }
 }
 @media (max-width: 480px) {
